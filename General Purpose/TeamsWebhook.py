@@ -16,9 +16,9 @@ def send_teams_message(title, body):
         "@context": "https://schema.org/extensions",
         "@type": "MessageCard",
         "title": title,
-        "text": "\n".join(body)
+        "text": "<pre>" + body + "</pre>",
+        "contentType": "text/html"
     }
-
     # Send the message card
     response = requests.post(
         webhook_url,
